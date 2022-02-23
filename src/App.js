@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import Animation from "./animation";
-
 const options = {
   max: 10,
   perspective: 1000,
@@ -79,7 +78,8 @@ class App extends Component {
               </div>
             </div>
           </Animation>
-        </div>
+          </div>
+         
       </div>
     );
   }

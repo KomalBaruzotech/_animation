@@ -51,6 +51,7 @@ export default class Animation extends Component {
     clearTimeout(this.transitionTimeout);
     cancelAnimationFrame(this.updateCall);
   }
+
   handleMouseEnter(cb = () => {}, e) {
     this.updateElementPosition();
     this.setTransition();
@@ -68,7 +69,7 @@ export default class Animation extends Component {
   }
   handleMouseMove(cb = () => {}, e) {
     e.persist();
-
+    console.log("mouse move :" , e.persist())
     if (this.updateCall !== null) {
       window.cancelAnimationFrame(this.updateCall);
     }
@@ -76,6 +77,7 @@ export default class Animation extends Component {
     this.updateCall = requestAnimationFrame(this.update.bind(this, e));
     return cb(e);
   }
+
   setTransition() {
     clearTimeout(this.transitionTimeout);
     this.setState((prevState) => ({
