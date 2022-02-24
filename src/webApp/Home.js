@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import homeImg from "../images/we_creates.svg";
 import Animation from "../animation";
-
+import { motion, Variants } from "framer-motion";
+import WhoWeAre from "./who_we_are";
+import ScrollAnimations from "./scrollAnimation";
+import LogoIcon from "../images/icon.svg";
+import data from "./data.json";
+import {Link } from "react-router-dom"
 const options = {
   max: 10,
   perspective: 1000,
@@ -15,6 +20,7 @@ export default class Home extends Component {
         <div className="bg-gradient-to-r from-gray-700 via-gray-900 to-black w-full h-full">
           <div className=" container mx-auto pb-20">
             {/* Header */}
+
             <div className="flex flex-row justify-between text-white font-semibold py-10">
               <div className=" w-1/5 text-2xl">Site.com</div>
               <div className="flex flex-row justify-between w-1/4">
@@ -24,13 +30,12 @@ export default class Home extends Component {
                 <div>Contact Us</div>
               </div>
             </div>
-
             {/* Home */}
             <div className="flex flex-row justify-between items-center text-white py-10">
               <div className="  w-2/4 space-y-10 textLeftToRight">
-                <div className=" text-7xl">
+                <span className=" text-7xl">
                   We Create value for your business.
-                </div>
+                </span>
                 <div className="text-3xl">
                   From web design and development to graphic design service,
                   Baruzotech can handle everything!
@@ -40,7 +45,6 @@ export default class Home extends Component {
                 <img src={homeImg} alt="home-img" className=" h-2/4" />
               </div>
             </div>
-
             {/* Section */}
             <div className=" py-20 text-center space-y-10 text-white textBottomToTop">
               <div className="text-7xl">Our Services</div>
@@ -49,105 +53,152 @@ export default class Home extends Component {
                 handle everything!
               </div>
             </div>
+            <ScrollAnimations>
+              <div className=" grid grid-cols-4 gap-5 ">
+                <Animation options={options}>
+                  <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
+                    <div className=" text-xl font-bold">Web Development</div>
+                    <div>
+                      Web development is the work involved in developing a
+                      website for the Internet or an intranet. Web development
+                      can range from developing a simple single static page of
+                      plain text to complex web applications, electronic
+                      businesses, and social network services.
+                    </div>
+                  </div>
+                </Animation>
+                <Animation options={options}>
+                  <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
+                    <div className=" text-xl font-bold">Web Development</div>
+                    <div>
+                      Web development is the work involved in developing a
+                      website for the Internet or an intranet. Web development
+                      can range from developing a simple single static page of
+                      plain text to complex web applications, electronic
+                      businesses, and social network services.
+                    </div>
+                  </div>
+                </Animation>
+                <Animation options={options}>
+                  <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
+                    <div className=" text-xl font-bold">Web Development</div>
+                    <div>
+                      Web development is the work involved in developing a
+                      website for the Internet or an intranet. Web development
+                      can range from developing a simple single static page of
+                      plain text to complex web applications, electronic
+                      businesses, and social network services.
+                    </div>
+                  </div>
+                </Animation>
+                <Animation options={options}>
+                  <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
+                    <div className=" text-xl font-bold">Web Development</div>
+                    <div>
+                      Web development is the work involved in developing a
+                      website for the Internet or an intranet. Web development
+                      can range from developing a simple single static page of
+                      plain text to complex web applications, electronic
+                      businesses, and social network services.
+                    </div>
+                  </div>
+                </Animation>
+                <Animation options={options}>
+                  <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
+                    <div className=" text-xl font-bold">Web Development</div>
+                    <div>
+                      Web development is the work involved in developing a
+                      website for the Internet or an intranet. Web development
+                      can range from developing a simple single static page of
+                      plain text to complex web applications, electronic
+                      businesses, and social network services.
+                    </div>
+                  </div>
+                </Animation>
+                <Animation options={options}>
+                  <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
+                    <div className=" text-xl font-bold">Web Development</div>
+                    <div>
+                      Web development is the work involved in developing a
+                      website for the Internet or an intranet. Web development
+                      can range from developing a simple single static page of
+                      plain text to complex web applications, electronic
+                      businesses, and social network services.
+                    </div>
+                  </div>
+                </Animation>
+                <Animation options={options}>
+                  <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
+                    <div className=" text-xl font-bold">Web Development</div>
+                    <div>
+                      Web development is the work involved in developing a
+                      website for the Internet or an intranet. Web development
+                      can range from developing a simple single static page of
+                      plain text to complex web applications, electronic
+                      businesses, and social network services.
+                    </div>
+                  </div>
+                </Animation>
+                <Animation options={options}>
+                  <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
+                    <div className=" text-xl font-bold">Web Development</div>
+                    <div>
+                      Web development is the work involved in developing a
+                      website for the Internet or an intranet. Web development
+                      can range from developing a simple single static page of
+                      plain text to complex web applications, electronic
+                      businesses, and social network services.
+                    </div>
+                  </div>
+                </Animation>
+              </div>
+            </ScrollAnimations>
+            {/*  */}
 
-            <div className=" grid grid-cols-4 gap-5 ">
-              <Animation options={options}>
-                <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
-                  <div className=" text-xl font-bold">Web Development</div>
-                  <div>
-                    Web development is the work involved in developing a website
-                    for the Internet or an intranet. Web development can range
-                    from developing a simple single static page of plain text to
-                    complex web applications, electronic businesses, and social
-                    network services.
+            <div className=" py-20 text-center space-y-10 text-white textBottomToTop">
+              <div className="text-7xl">Who we are</div>
+              <div className="text-3xl">
+                From web design and development to graphic design service, We
+                handle everything!
+              </div>
+            </div>
+
+            {/* Who we are */}
+            <div>
+              <ScrollAnimations>
+                <WhoWeAre />
+              </ScrollAnimations>
+            </div>
+
+            {/* <div className=" pt-40">
+              <ScrollAnimations />
+            </div> */}
+
+            <div className="py-10">
+              <ScrollAnimations>
+                <div className=" py-20 text-center space-y-10 text-white textBottomToTop">
+                  <div className="text-7xl">We’ve Worked With</div>
+                  <div className="text-3xl">
+                    Since opening in 2019, we've had the privilege to help many
+                    companies improve their online presence.
                   </div>
                 </div>
-              </Animation>
-              <Animation options={options}>
-                <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
-                  <div className=" text-xl font-bold">Web Development</div>
-                  <div>
-                    Web development is the work involved in developing a website
-                    for the Internet or an intranet. Web development can range
-                    from developing a simple single static page of plain text to
-                    complex web applications, electronic businesses, and social
-                    network services.
-                  </div>
-                </div>
-              </Animation>
-              <Animation options={options}>
-                <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
-                  <div className=" text-xl font-bold">Web Development</div>
-                  <div>
-                    Web development is the work involved in developing a website
-                    for the Internet or an intranet. Web development can range
-                    from developing a simple single static page of plain text to
-                    complex web applications, electronic businesses, and social
-                    network services.
-                  </div>
-                </div>
-              </Animation>
-              <Animation options={options}>
-                <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
-                  <div className=" text-xl font-bold">Web Development</div>
-                  <div>
-                    Web development is the work involved in developing a website
-                    for the Internet or an intranet. Web development can range
-                    from developing a simple single static page of plain text to
-                    complex web applications, electronic businesses, and social
-                    network services.
-                  </div>
-                </div>
-              </Animation>
-              <Animation options={options}>
-                <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
-                  <div className=" text-xl font-bold">Web Development</div>
-                  <div>
-                    Web development is the work involved in developing a website
-                    for the Internet or an intranet. Web development can range
-                    from developing a simple single static page of plain text to
-                    complex web applications, electronic businesses, and social
-                    network services.
-                  </div>
-                </div>
-              </Animation>
-              <Animation options={options}>
-                <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
-                  <div className=" text-xl font-bold">Web Development</div>
-                  <div>
-                    Web development is the work involved in developing a website
-                    for the Internet or an intranet. Web development can range
-                    from developing a simple single static page of plain text to
-                    complex web applications, electronic businesses, and social
-                    network services.
-                  </div>
-                </div>
-              </Animation>
-              <Animation options={options}>
-                <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
-                  <div className=" text-xl font-bold">Web Development</div>
-                  <div>
-                    Web development is the work involved in developing a website
-                    for the Internet or an intranet. Web development can range
-                    from developing a simple single static page of plain text to
-                    complex web applications, electronic businesses, and social
-                    network services.
-                  </div>
-                </div>
-              </Animation>
-              <Animation options={options}>
-                <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
-                  <div className=" text-xl font-bold">Web Development</div>
-                  <div>
-                    Web development is the work involved in developing a website
-                    for the Internet or an intranet. Web development can range
-                    from developing a simple single static page of plain text to
-                    complex web applications, electronic businesses, and social
-                    network services.
-                  </div>
-                </div>
-              </Animation>
-              
+              </ScrollAnimations>
+
+              <div className="flex justify-between">
+                {data.map((title) => {
+                  return (
+                    <>
+                    {/* <Link to={`/sub_services/${title.id}`}> */}
+                      <div className="text-xl font-bold bg-lightBlue p-10" key={title.id}>
+                        <img src={LogoIcon} alt="logo" />
+                        {title.name}
+                      </div>
+                      {/* </Link> */}
+                    </>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

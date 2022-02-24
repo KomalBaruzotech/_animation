@@ -24,6 +24,7 @@ module.exports = {
         darkPurple : "#8840ae",
         blue : "#0969b4",
         pink : "#c9447f",
+        lightBlue : "#f2f6fb",
       },
       fontSize : {
         '16px' : '16px'

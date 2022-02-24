@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.container {
+  max-width: 1240px;
+  @apply mx-auto;
+  @apply px-4;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 700px;
+    @apply px-3;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 650px;
+    @apply px-3;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .container {
+    max-width: 280px;
+    @apply px-1;
+  }
+}
+
+.fontFamily {
+  font-family: "Inter", sans-serif;
+}
+
+
 /* .container {
     width: 200px;
     height: 200px;
@@ -197,4 +230,18 @@ h1 span {
     opacity: 1;
     transform: translate(0);
   }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 1200ms ease-out, transform 600ms ease-out,
+    visibility 1200ms ease-out;
+  will-change: opacity, transform, visibility;
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
 }

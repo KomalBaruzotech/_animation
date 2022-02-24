@@ -69,7 +69,7 @@ export default class Animation extends Component {
   }
   handleMouseMove(cb = () => {}, e) {
     e.persist();
-    console.log("mouse move :" , e.persist())
+
     if (this.updateCall !== null) {
       window.cancelAnimationFrame(this.updateCall);
     }
