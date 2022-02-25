@@ -235,13 +235,29 @@ h1 span {
 .fade-in-section {
   opacity: 0;
   transform: translateY(20vh);
-  visibility: hidden;
-  transition: opacity 1200ms ease-out, transform 600ms ease-out,
-    visibility 1200ms ease-out;
-  will-change: opacity, transform, visibility;
+  /* visibility: hidden; */
+  transition: opacity 1200ms ease-in, transform 600ms ease-in;
+    /* visibility 1200ms ease-out; */
+  /* will-change: opacity, transform, visibility; */
 }
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
-  visibility: visible;
+  /* visibility: visible; */
+}
+
+.zoomOutBox:hover{
+  animation : zoomOut 1s ease
+}
+
+@keyframes zoomOut {
+    0%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(1.5);
+    }
+    100%{
+      transform: scale(1);
+    }
 }

@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import homeImg from "../images/we_creates.svg";
 import Animation from "../animation";
-import { motion, Variants } from "framer-motion";
 import WhoWeAre from "./who_we_are";
 import ScrollAnimations from "./scrollAnimation";
 import LogoIcon from "../images/icon.svg";
 import data from "./data.json";
-import {Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import Header from "./Header";
+
 const options = {
   max: 10,
   perspective: 1000,
@@ -20,23 +21,16 @@ export default class Home extends Component {
         <div className="bg-gradient-to-r from-gray-700 via-gray-900 to-black w-full h-full">
           <div className=" container mx-auto pb-20">
             {/* Header */}
+          <Header />
+           
 
-            <div className="flex flex-row justify-between text-white font-semibold py-10">
-              <div className=" w-1/5 text-2xl">Site.com</div>
-              <div className="flex flex-row justify-between w-1/4">
-                <div>Home</div>
-                <div>Services</div>
-                <div>About</div>
-                <div>Contact Us</div>
-              </div>
-            </div>
             {/* Home */}
-            <div className="flex flex-row justify-between items-center text-white py-10">
-              <div className="  w-2/4 space-y-10 textLeftToRight">
-                <span className=" text-7xl">
+            <div className="md:flex md:flex-row justify-between items-center text-white py-10 space-y-10 md:space-y-0">
+              <div className="  md:w-2/4 md:space-y-10 space-y-5 textLeftToRight">
+                <span className="md:text-7xl text-3xl">
                   We Create value for your business.
                 </span>
-                <div className="text-3xl">
+                <div className="md:text-3xl text-xl">
                   From web design and development to graphic design service,
                   Baruzotech can handle everything!
                 </div>
@@ -54,7 +48,7 @@ export default class Home extends Component {
               </div>
             </div>
             <ScrollAnimations>
-              <div className=" grid grid-cols-4 gap-5 ">
+              <div className=" grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-5 ">
                 <Animation options={options}>
                   <div className="bg-white p-10 rounded-2xl space-y-3 shadow-2xl">
                     <div className=" text-xl font-bold">Web Development</div>
@@ -165,9 +159,9 @@ export default class Home extends Component {
 
             {/* Who we are */}
             <div>
-              <ScrollAnimations>
-                <WhoWeAre />
-              </ScrollAnimations>
+              {/* <ScrollAnimations> */}
+              <WhoWeAre />
+              {/* </ScrollAnimations> */}
             </div>
 
             {/* <div className=" pt-40">
@@ -185,16 +179,20 @@ export default class Home extends Component {
                 </div>
               </ScrollAnimations>
 
-              <div className="flex justify-between">
+              <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 justify-between items-center md:space-x-10 space-y-5 md:space-y-0">
                 {data.map((title) => {
                   return (
                     <>
-                    {/* <Link to={`/sub_services/${title.id}`}> */}
-                      <div className="text-xl font-bold bg-lightBlue p-10" key={title.id}>
-                        <img src={LogoIcon} alt="logo" />
-                        {title.name}
-                      </div>
-                      {/* </Link> */}
+                      <Link to={`/sub_services/${title.id}`}>
+                        <div
+                          className="text-xl font-bold bg-lightBlue p-10 "
+                          key={title.id}
+                        >
+                          <div className="zoomOutBox flex items-center justify-center">
+                            <img src={LogoIcon} alt="logo" />
+                          </div>
+                        </div>
+                      </Link>
                     </>
                   );
                 })}

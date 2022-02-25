@@ -6,7 +6,7 @@ export default class WhoWeAre extends Component {
   render() {
     return (
       <>
-        <div className="grid grid-cols-4 gap-5">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5">
           <ScrollAnimation animateIn="fadeIn" animateOut="fadeOut">
             <div className=" bg-white px-5 py-10 text-xl font-bold rounded-2xl text-center    ">
               Personalized & Customized IT solutions
